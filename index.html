@@ -96,19 +96,37 @@
 
 <!-- Active section highlighting -->
 <script>
-  const links = document.querySelectorAll('.navbar a');
-  window.addEventListener('scroll', () => {
-    const fromTop = window.scrollY + 90; // adjust to navbar height
-    links.forEach(link => {
-      const section = document.querySelector(link.hash);
-      if (section && section.offsetTop <= fromTop && section.offsetTop + section.offsetHeight > fromTop) {
-        link.classList.add('active');
-      } else {
-        link.classList.remove('active');
-      }
+// Smooth scroll with navbar offset
+document.querySelectorAll('.navbar a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    const offset = 80; // height of navbar
+    const bodyRect = document.body.getBoundingClientRect().top;
+    const targetRect = target.getBoundingClientRect().top;
+    const targetPosition = targetRect - bodyRect - offset;
+    window.scrollTo({
+      top: targetPosition,
+      behavior: 'smooth'
     });
   });
+});
+
+// Active section highlighting
+const links = document.querySelectorAll('.navbar a');
+window.addEventListener('scroll', () => {
+  const fromTop = window.scrollY + 90; // adjust for navbar
+  links.forEach(link => {
+    const section = document.querySelector(link.hash);
+    if (section && section.offsetTop <= fromTop && section.offsetTop + section.offsetHeight > fromTop) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
+    }
+  });
+});
 </script>
+
 
 </body>
 </html>
