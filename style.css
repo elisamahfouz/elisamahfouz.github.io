@@ -41,3 +41,16 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.profile-photo {
+  width: 140px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 4px;
+}
