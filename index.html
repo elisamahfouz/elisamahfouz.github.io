@@ -79,6 +79,21 @@
 
 </div>
 
+<script>
+  const links = document.querySelectorAll('.navbar a');
+  window.addEventListener('scroll', () => {
+    let fromTop = window.scrollY + 50;
+    links.forEach(link => {
+      let section = document.querySelector(link.hash);
+      if (section.offsetTop <= fromTop && section.offsetTop + section.offsetHeight > fromTop) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+  });
+</script>
+
 </body>
 </html>
 
