@@ -1,10 +1,14 @@
-/* Base body */
+/* Base */
+html {
+  scroll-behavior: smooth; /* smooth scrolling */
+}
+
 body {
   font-family: Georgia, serif;
   background-color: #fdfefe;
   color: #1b1b1b;
   line-height: 1.7;
-  scroll-behavior: smooth; /* Smooth scrolling */
+  margin: 0;
 }
 
 /* Container */
@@ -14,7 +18,7 @@ body {
   padding: 0 22px;
 }
 
-/* Header with photo */
+/* Header */
 .header {
   display: flex;
   align-items: center;
@@ -31,7 +35,6 @@ body {
   border-radius: 4px;
 }
 
-/* Name and affiliation */
 h1 {
   font-size: 2.3em;
   margin-bottom: 4px;
@@ -42,11 +45,26 @@ h1 {
   color: #555;
 }
 
-/* Section headers */
+.links a {
+  color: #6d28d9;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+.links a:hover {
+  text-decoration: underline;
+}
+
+/* Section headings */
 h2 {
   font-size: 1.35em;
   margin-top: 40px;
   color: #4c1d95;
+}
+
+/* Section padding for smooth scroll */
+section {
+  scroll-margin-top: 90px; /* adjust for navbar height */
 }
 
 /* Navbar */
@@ -80,7 +98,7 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Responsive navbar */
+/* Responsive */
 @media (max-width: 600px) {
   .navbar {
     flex-direction: column;
