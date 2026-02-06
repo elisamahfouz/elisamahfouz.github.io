@@ -1,6 +1,6 @@
 /* Base */
 html {
-  scroll-behavior: smooth; /* smooth scrolling */
+  scroll-behavior: smooth; /* fallback if JS fails */
 }
 
 body {
@@ -45,26 +45,11 @@ h1 {
   color: #555;
 }
 
-.links a {
-  color: #6d28d9;
-  text-decoration: none;
-  margin-right: 10px;
-}
-
-.links a:hover {
-  text-decoration: underline;
-}
-
 /* Section headings */
 h2 {
   font-size: 1.35em;
   margin-top: 40px;
   color: #4c1d95;
-}
-
-/* Section padding for smooth scroll */
-section {
-  scroll-margin-top: 90px; /* adjust for navbar height */
 }
 
 /* Navbar */
